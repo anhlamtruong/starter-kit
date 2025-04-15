@@ -1,0 +1,31 @@
+{
+  "name": "the-architect-cli",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Using the CLI to apply microservice folder architecture - Maybe ?👀",
+  "main": "dist/index.js",
+  "bin": {
+    "tac": "./dist/index.js"
+  },
+  "files": [
+    "dist",
+    "src/templates"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsx src/index.ts"
+  },
+  "author": "Lam Anh Truong",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/react": "^19.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "react": "^19.1.0"
+  }
+}
