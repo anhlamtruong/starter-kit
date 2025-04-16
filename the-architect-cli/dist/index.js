@@ -2,7 +2,6 @@
 import { architectCommand } from "./commands/architect/index.js";
 import { main_config_message, cli_keywords } from "./config/index.js";
 import { parseArgs } from "./utils/parse-args.js";
-console.log(process);
 const { command, name, flags } = parseArgs(process.argv);
 console.log("Command:", command);
 console.log("Name:", name);

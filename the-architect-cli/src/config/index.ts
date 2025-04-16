@@ -1,7 +1,7 @@
 export const main_config_message = (cli_name: string, command_name: string) => {
   return {
     messages: {
-      usage: `💥 Usage: npx ${cli_name} ${command_name} <name> [--with-api] [--with-hooks] [--with-components]`,
+      usage: `💥 Usage: npx ${cli_name} ${command_name} [--with-api] [--with-hooks] [--with-components]`,
     },
   };
 };

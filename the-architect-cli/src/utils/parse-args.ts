@@ -6,7 +6,6 @@ import { flags_validations } from "./flags-validation.js";
  * Parses CLI arguments using minimist and returns structured command, name, and flags.
  */
 export function parseArgs(argv: string[]) {
-  console.log(argv);
   const parsed = minimist(argv.slice(2), {
     alias: cli_keywords.alias,
     boolean: cli_keywords.boolean,
