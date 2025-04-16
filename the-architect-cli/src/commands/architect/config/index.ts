@@ -24,7 +24,7 @@ export const file_naming = {
 };
 
 export const flags = {
-  api: "--with-api",
-  hooks: "--with-hooks",
-  components: "--with-components",
+  api: "with-api",
+  hooks: "with-hooks",
+  components: "with-components",
 };

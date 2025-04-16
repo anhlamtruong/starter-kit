@@ -18,7 +18,7 @@ export const file_naming = {
     components: "components.ts",
 };
 export const flags = {
-    api: "--with-api",
-    hooks: "--with-hooks",
-    components: "--with-components",
+    api: "with-api",
+    hooks: "with-hooks",
+    components: "with-components",
 };

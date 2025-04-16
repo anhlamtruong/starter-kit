@@ -17,20 +17,22 @@ import { writeComponentTemplate } from "./template/component-template.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export function architectCommand(name: string, flags: string[]) {
+interface ArchitectCommandInterface {
+  name: string;
+  flags: Record<string, any>;
+}
+
+export function architectCommand({ name, flags }: ArchitectCommandInterface) {
   if (!name) {
     console.error(messages.noName);
     process.exit(1);
   }
 
   const options = {
-    withApi: flags.includes(flags_options.api),
-    withHooks: flags.includes(flags_options.hooks),
-    withComponents: flags.includes(flags_options.components),
+    withApi: flags[flags_options.api],
+    withHooks: flags[flags_options.hooks],
+    withComponents: flags[flags_options.components],
   };
-  console.log(flags);
-  console.log(flags_options.api);
-  console.log(options);
 
   const routeFolder = path.join(
     process.cwd(),
