@@ -1,5 +1,7 @@
-import { architectCommand } from "./commands/architect";
-import { config } from "./config";
+#!/usr/bin/env node
+
+import { architectCommand } from "./commands/architect/index.js";
+import { config } from "./config/index.js";
 
 const args = process.argv.slice(2);
 const [command, name, ...flags] = args;

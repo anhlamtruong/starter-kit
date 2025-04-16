@@ -10,6 +10,7 @@ export const file_directory = {
 export const folder_naming = {
     api: "api",
     hooks: "hooks",
+    components: "components",
 };
 export const file_naming = {
     page: "page.tsx",

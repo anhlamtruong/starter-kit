@@ -14,7 +14,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/index.ts",
+    "arch": "npm run dev -- arch"
   },
   "author": "Lam Anh Truong",
   "license": "ISC",
