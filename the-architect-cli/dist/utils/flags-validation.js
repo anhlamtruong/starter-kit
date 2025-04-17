@@ -6,14 +6,7 @@ export function flags_validations(parsed) {
         !Object.keys(cli_keywords.alias).includes(key));
     if (unknownFlags.length > 0) {
         console.error(chalk.red(`🚩 Unknown flag(s): ${unknownFlags.join(", ")}`));
-        console.log(chalk.yellow("👉 Valid flags:"));
-        cli_keywords.boolean.forEach((flag) => {
-            var _a;
-            const short = (_a = Object.entries(cli_keywords.alias).find(([, long]) => long === `--${flag}`)) === null || _a === void 0 ? void 0 : _a[0];
-            console.log(chalk.redBright(short));
-            const aliasString = short ? chalk.cyan(`(-${short})`) : "";
-            console.log(chalk.green(`  --${flag}`), aliasString);
-        });
+        printValidFlags();
         const [command] = parsed._;
         const usageMessage = flags_config_message("tac", command || "command", cli_keywords.boolean.map((flag) => {
             return flag;
@@ -23,10 +16,10 @@ export function flags_validations(parsed) {
     }
     return true;
 }
-export const flags_config_message = (cli_name, command_name, flags) => {
+const flags_config_message = (cli_name, command_name, flags) => {
     return {
         flags_error: {
-            correction: chalk.blue(`✅ npx ${cli_name} ${command_name} ${flags
+            correction: chalk.green(`✅ Correct syntax: npx ${cli_name} ${command_name} ${flags
                 .map((flag) => {
                 return `[--${flag}]`;
             })
@@ -34,3 +27,13 @@ export const flags_config_message = (cli_name, command_name, flags) => {
         },
     };
 };
+function printValidFlags() {
+    console.log(chalk.yellow("👉 Valid flags:"));
+    cli_keywords.boolean.forEach((flag) => {
+        var _a;
+        const short = (_a = Object.entries(cli_keywords.alias).find(([_, longName]) => longName === flag)) === null || _a === void 0 ? void 0 : _a[0];
+        const longFormatted = chalk.green(`  --${flag}`);
+        const shortFormatted = short ? chalk.green(`(-${short})`) : "";
+        console.log(`${longFormatted} ${shortFormatted}`);
+    });
+}
