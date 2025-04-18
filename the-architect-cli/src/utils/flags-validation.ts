@@ -2,6 +2,14 @@ import { cli_keywords, main_config_message } from "../config/index.js";
 import chalk from "chalk";
 import minimist from "minimist";
 
+/**
+ * Validates parsed CLI flags against known boolean flags and their aliases.
+ *
+ * Logs an error and usage correction if any unknown flags are detected, and returns `false`. Returns `true` if all flags are valid.
+ *
+ * @param parsed - The parsed command-line arguments.
+ * @returns `true` if all flags are recognized; otherwise, `false`.
+ */
 export function flags_validations(parsed: minimist.ParsedArgs): boolean {
   const unknownFlags = Object.keys(parsed).filter(
     (key) =>
@@ -46,6 +54,11 @@ const flags_config_message = (
   };
 };
 
+/**
+ * Displays a formatted list of all valid boolean CLI flags and their short aliases.
+ *
+ * Each flag is printed in green, with its long form (`--flag`) and, if available, its short form (`-x`).
+ */
 function printValidFlags() {
   console.log(chalk.yellow("👉 Valid flags:"));
 

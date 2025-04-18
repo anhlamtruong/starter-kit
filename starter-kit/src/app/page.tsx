@@ -1,5 +1,10 @@
 import Image from "next/image";
 
+/**
+ * Renders the main landing page layout for the application, featuring the Next.js logo, setup instructions, quick links to deployment and documentation, and a footer with resource links.
+ *
+ * @returns The JSX markup for the home page.
+ */
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">

@@ -22,6 +22,17 @@ interface ArchitectCommandInterface {
   flags: Record<string, any>;
 }
 
+/**
+ * Scaffolds a new microservice directory with optional API, hooks, and components subfolders and files.
+ *
+ * Creates a root folder for the microservice under the main directory, generates a page file, and conditionally adds API, hooks, and components folders with template files based on provided flags.
+ *
+ * @param name - The name of the microservice to create.
+ * @param flags - An object specifying which optional folders and files to generate.
+ *
+ * @remark
+ * Exits the process with an error if the name is missing or if the target microservice folder already exists.
+ */
 export function architectCommand({ name, flags }: ArchitectCommandInterface) {
   if (!name) {
     console.error(messages.noName);
